@@ -2,17 +2,20 @@
 
 namespace App\Http\Livewire\Posts;
 
-use App\Models\Post;
 use Livewire\Component;
+use Livewire\WithPagination;
+use App\Models\Post;
 
 class ShowAll extends Component
 {
-    public Post $post;
+    use WithPagination; //Add Pagination trait from livewire to page
+    protected $paginationTheme = 'bootstrap';
+
 
     public function render()
     {
         return view('livewire.posts.show-all', [
-          'posts' => Post::all()
+          'posts' => Post::paginate(5),
           ])
           ->layout('layouts.master');
     }

@@ -33,6 +33,48 @@ class PostSeeder extends Seeder
             'created_at'  =>  now(),
             'updated_at'  =>  now(),
           ],
+          [
+            'title'       =>  '4th Post',
+            'description' =>  'Maxime quasi similique voluptas nam nulla quia. At non blanditiis dolores rerum sit. Iusto quod eum itaque. Maxime voluptas blanditiis nobis itaque nihil.… ',
+            'created_at'  =>  now(),
+            'updated_at'  =>  now(),
+          ],
+          [
+            'title'       =>  '5th Post',
+            'description' =>  'Maxime quasi similique voluptas nam nulla quia. At non blanditiis dolores rerum sit. Iusto quod eum itaque. Maxime voluptas blanditiis nobis itaque nihil.… ',
+            'created_at'  =>  now(),
+            'updated_at'  =>  now(),
+          ],
+          [
+            'title'       =>  '6th Post',
+            'description' =>  'Maxime quasi similique voluptas nam nulla quia. At non blanditiis dolores rerum sit. Iusto quod eum itaque. Maxime voluptas blanditiis nobis itaque nihil.… ',
+            'created_at'  =>  now(),
+            'updated_at'  =>  now(),
+          ],
+          [
+            'title'       =>  '7th Post',
+            'description' =>  'Maxime quasi similique voluptas nam nulla quia. At non blanditiis dolores rerum sit. Iusto quod eum itaque. Maxime voluptas blanditiis nobis itaque nihil.… ',
+            'created_at'  =>  now(),
+            'updated_at'  =>  now(),
+          ],
+          [
+            'title'       =>  '8th Post',
+            'description' =>  'Maxime quasi similique voluptas nam nulla quia. At non blanditiis dolores rerum sit. Iusto quod eum itaque. Maxime voluptas blanditiis nobis itaque nihil.… ',
+            'created_at'  =>  now(),
+            'updated_at'  =>  now(),
+          ],
+          [
+            'title'       =>  '9th Post',
+            'description' =>  'Maxime quasi similique voluptas nam nulla quia. At non blanditiis dolores rerum sit. Iusto quod eum itaque. Maxime voluptas blanditiis nobis itaque nihil.… ',
+            'created_at'  =>  now(),
+            'updated_at'  =>  now(),
+          ],
+          [
+            'title'       =>  '10th Post',
+            'description' =>  'Maxime quasi similique voluptas nam nulla quia. At non blanditiis dolores rerum sit. Iusto quod eum itaque. Maxime voluptas blanditiis nobis itaque nihil.… ',
+            'created_at'  =>  now(),
+            'updated_at'  =>  now(),
+          ],
         ]);
     }
 }
