@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('post/{post}', \App\Http\Livewire\Posts\Show::class);
-Route::get('posts', \App\Http\Livewire\Posts\ShowAll::class);
+Route::get('posts', \App\Http\Livewire\Posts\ShowAll::class)->name('posts');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', \App\Http\Livewire\Home::class)->name('home');
+
+// Route::get('/', function () {
+//     return view('home', \App\Http\Livewire\Home::class);
+// });
 
 //// TODO: Setup MV routing for Livewire pages
 //// + Make documentation website with reference posts + comments
