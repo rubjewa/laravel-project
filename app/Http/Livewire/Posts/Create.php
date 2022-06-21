@@ -10,10 +10,10 @@ class Create extends Component
     public $title;
     public $description;
 
-    protected $rules = [
-      'title'       => ['required', 'min:5'],
-      'description' => ['required', 'min:5'],
-    ];
+    // protected $rules = [
+    //   'title'       => ['required', 'min:5'],
+    //   'description' => ['required', 'min:5'],
+    // ];
 
     //Method for when form is updated (realtime validation for example)
     // public function updated()
@@ -21,18 +21,30 @@ class Create extends Component
     //   $this->validateOnly()
     // }
 
-    public function store()
+    public function submit()
     {
-        Post::create([
-          'title' =>  $this->title,
-          'description' =>  $this->description,
+        $validatedData = $this->validate([
+            'title' => 'required|min:5',
+            'description' => 'required|min:5',
         ]);
 
-        session()->flash('succes', 'Post gemaakt');
+        Post::create($validatedData);
 
-        // Inputfields leeghalen
-        $this->reset();
+        return redirect()->to('/posts');
     }
+
+    // public function store()
+    // {
+    //     Post::create([
+    //       'title' =>  $this->title,
+    //       'description' =>  $this->description,
+    //     ]);
+    //
+    //     session()->flash('succes', 'Post gemaakt');
+    //
+    //     // Inputfields leeghalen
+    //     $this->reset();
+    // }
 
     public function render()
     {

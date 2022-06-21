@@ -1,66 +1,22 @@
-<div>
-    <div class="container">
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-5">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title" style="float: left;">Add New Students</h5>
-                        <a href="{{ route('students') }}" class="btn btn-sm btn-primary" style="float: right;">All Students</a>
-                    </div>
-                    <div class="card-body">
-                        @if (session()->has('message'))
-                        <div class="alert alert-success text-center">{{ session('message') }}</div>
-                        @endif
+<div class="container mx-auto px-4">
+    <h1 class="text-4xl mt-6 tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">Create Post</h1>
+    <p class="text-lg mt-2 text-gray-600">Maak hieronder een nieuwe post aan.</p><br />
 
-
-                        <form wire:submit.prevent="storeStudent">
-                            <div class="form-group">
-                                <label for="student_id">Student ID</label>
-                                <input type="number" class="form-control" wire:model="student_id" autocomplete="off" />
-                                {{-- for validation --}}
-                                @error('student_id')
-                                <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" wire:model="name" autocomplete="off" />
-                                {{-- for validation --}}
-                                @error('name')
-                                <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" wire:model="email" autocomplete="off" />
-                                {{-- for validation --}}
-                                @error('email')
-                                <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="number" class="form-control" wire:model="phone" autocomplete="off" />
-                                {{-- for validation --}}
-                                @error('phone')
-                                <span class="text-danger" style="font-size: 12.5px;">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn btn-primary btn-sm w-50">Add Student</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <form wire:submit.prevent="submit">
+        <div class="form-group">
+            <label for="exampleInputTitle">Titel</label>
+            <input type="text" class="form-control" id="exampleInputTitle" placeholder="Voer de titel van de post in" wire:model="title">
+            @error('title') <span class="text-danger">{{ $message }}</span>
+            @enderror
         </div>
-    </div>
+
+        <div class="form-group">
+            <label for="exampleInputDescription">Tekst</label>
+            <textarea class="form-control" id="exampleInputDescription" placeholder="Voer hier de tekst van je post in" wire:model="description"></textarea>
+            @error('description') <span class="text-danger">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <button type="submit" class="btn btn-primary">Post Opslaan</button>
+    </form>
 </div>
