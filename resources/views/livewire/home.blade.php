@@ -21,8 +21,15 @@
                         <div class="small text-muted">{{ $post->created_on }}
                         </div>
                         <h2 class="card-title">{{ $post->title }}</h2>
-                        <p class="card-text">{{ $post->description }}</p>
+                        <p class="card-text">{{ Str::limit($post->description, 400) }}</p>
+                    </div>
+                    <div class="card-body">
                         <a class="btn btn-primary" href="#!">Read more →</a>
+                        {{-- <strong>Featured Post <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-award" viewBox="0 0 16 16">
+                                <path
+                                  d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z" />
+                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
+                            </svg></strong> --}}
                     </div>
                 </div>
                 @endif
@@ -36,10 +43,12 @@
                         <div class="card mb-4">
                             <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..."></a>
                             <div class="card-body">
-                                <div class="small text-muted">{{ $post->created_on }}</div>
                                 <h2 class="card-title h4">{{ $post->title }}</h2>
-                                <p class="card-text">{{ $post->description }}</p>
+                                <p class="card-text">{{ Str::limit($post->description, 115) }}</p>
                                 <a class="btn btn-primary" href="#!">Read more →</a>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <i>{{ $post->created_at->isoFormat('D-MM-Y') }}</i>
                             </div>
                         </div>
                     </div>
@@ -70,14 +79,14 @@
                                 <ul class="list-unstyled mb-0">
                                     <li><a href="#!">Web Design</a></li>
                                     <li><a href="#!">HTML</a></li>
-                                    <li><a href="#!">Freebies</a></li>
+                                    <li><a href="#!">Laravel</a></li>
                                 </ul>
                             </div>
                             <div class="col-sm-6">
                                 <ul class="list-unstyled mb-0">
                                     <li><a href="#!">JavaScript</a></li>
                                     <li><a href="#!">CSS</a></li>
-                                    <li><a href="#!">Tutorials</a></li>
+                                    <li><a href="#!">Livewire</a></li>
                                 </ul>
                             </div>
                         </div>
