@@ -9,11 +9,6 @@ class Show extends Component
 {
     public Post $post;
 
-    // public function mount($post)
-    // {
-    //     $this->post = $post;
-    // }
-
     public function mount($id)
     {
         $this->post = Post::find($id);

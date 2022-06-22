@@ -11,12 +11,14 @@ class ShowAll extends Component
     use WithPagination; //Add Pagination trait from livewire to page
     protected $paginationTheme = 'bootstrap';
 
+    public $term;
 
     public function render()
     {
         return view('livewire.posts.show-all', [
-          'posts' => Post::paginate(5),
-          ])
-          ->layout('layouts.master');
+          'posts' => Post::when($this->term, function ($query, $term) {
+              return $query->where('title', 'LIKE', "%$term%");
+          })->paginate(4),
+          ])->layout('layouts.master');
     }
 }
