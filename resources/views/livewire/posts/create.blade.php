@@ -5,14 +5,14 @@
     <form wire:submit.prevent="submit">
         <div class="form-group">
             <label for="exampleInputTitle">Titel</label>
-            <input type="text" class="form-control" id="exampleInputTitle" placeholder="Voer de titel van de post in" wire:model="title">
+            <input type="text" class="form-control" placeholder="Voer de titel van de post in" wire:model="title">
             @error('title') <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
 
         <div class="form-group">
             <label for="exampleInputDescription">Tekst</label>
-            <textarea class="form-control" id="exampleInputDescription" placeholder="Voer hier de tekst van je post in" wire:model="description"></textarea>
+            <textarea class="form-control" placeholder="Voer hier de tekst van je post in" wire:model="description"></textarea>
             @error('description') <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>

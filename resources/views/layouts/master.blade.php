@@ -11,7 +11,9 @@
 
     <br />
     <main class="container align-middle">
+      @isset($slot)
         {{ $slot }}
+      @endisset
     </main>
 
     <x-partials.footer />

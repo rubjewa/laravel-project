@@ -13,6 +13,13 @@ class ShowAll extends Component
 
     public $term;
 
+    public function showPost($id)
+    {
+        $post = Post::findOrFail($id);
+
+        return redirect()->route('showpost', $id);
+    }
+
     public function render()
     {
         return view('livewire.posts.show-all', [

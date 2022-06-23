@@ -11,13 +11,6 @@ class Home extends Component
     use WithPagination; //Add Pagination trait from livewire to page
     protected $paginationTheme = 'bootstrap';
 
-    public function showPost($id)
-    {
-        $post = Post::findOrFail($id);
-
-        return redirect()->route('showpost', $id);
-    }
-
     public function render()
     {
         return view('livewire.home', [
