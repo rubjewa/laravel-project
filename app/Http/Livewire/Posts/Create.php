@@ -4,22 +4,12 @@ namespace App\Http\Livewire\Posts;
 
 use Livewire\Component;
 use App\Models\Post;
+use App\Http\Livewire\Trix;
 
 class Create extends Component
 {
     public $title;
     public $description;
-
-    // protected $rules = [
-    //   'title'       => ['required', 'min:5'],
-    //   'description' => ['required', 'min:5'],
-    // ];
-
-    //Method for when form is updated (realtime validation for example)
-    // public function updated()
-    // {
-    //   $this->validateOnly()
-    // }
 
     public function submit()
     {
@@ -32,19 +22,6 @@ class Create extends Component
 
         return redirect()->to('/posts');
     }
-
-    // public function store()
-    // {
-    //     Post::create([
-    //       'title' =>  $this->title,
-    //       'description' =>  $this->description,
-    //     ]);
-    //
-    //     session()->flash('succes', 'Post gemaakt');
-    //
-    //     // Inputfields leeghalen
-    //     $this->reset();
-    // }
 
     public function render()
     {

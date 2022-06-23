@@ -3,7 +3,6 @@
 
 <head>
     <x-partials.head />
-    @livewireStyles
 </head>
 
 <body>
@@ -17,7 +16,6 @@
     </main>
 
     <x-partials.footer />
-    @livewireScripts
 </body>
 
 </html>

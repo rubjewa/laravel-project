@@ -18,7 +18,7 @@
                     <div class="small text-muted">{{ $post->created_on }}
                     </div>
                     <h2 class="card-title">{{ $post->title }}</h2>
-                    <p class="card-text">{{ Str::limit($post->description, 400) }}</p>
+                    <p class="card-text">{!! Str::limit($post->description, 400) !!}</p>
                 </div>
                 <div class="card-body">
                     <button class="btn btn-primary" wire:click="showPost({{ $post->id }})">Lees meer →</button>
@@ -40,11 +40,13 @@
                         <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..."></a>
                         <div class="card-body">
                             <h2 class="card-title h4">{{ $post->title }}</h2>
-                            <p class="card-text">{{ Str::limit($post->description, 115) }}</p>
-                            <button class="btn btn-primary" wire:click="showPost({{ $post->id }})">Lees meer →</button>
+                            <p class="card-text">{!! Str::limit($post->description, 115) !!}</p>
                         </div>
                         <div class="card-footer text-muted">
                             <i>{{ $post->created_at->isoFormat('D-MM-Y') }}</i>
+
+                            <button class="btn btn-primary float-end" wire:click="showPost({{ $post->id }})">Lees meer →</button>
+
                         </div>
                     </div>
                 </div>

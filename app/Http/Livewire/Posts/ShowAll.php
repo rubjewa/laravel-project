@@ -24,7 +24,7 @@ class ShowAll extends Component
     {
         return view('livewire.posts.show-all', [
           'posts' => Post::when($this->term, function ($query, $term) {
-              return $query->where('title', 'LIKE', "%$term%");
+              return $query->where('title', 'LIKE', "%$term%")->orWhere('description', 'LIKE', "%$term%");
           })->paginate(4),
           ])->layout('layouts.master');
     }

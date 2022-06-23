@@ -4,19 +4,25 @@
 
     <form wire:submit.prevent="submit">
         <div class="form-group">
-            <label for="exampleInputTitle">Titel</label>
+            <label for="exampleInputTitle">Post Titel</label>
             <input type="text" class="form-control" placeholder="Voer de titel van de post in" wire:model="title">
             @error('title') <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
 
         <div class="form-group">
-            <label for="exampleInputDescription">Tekst</label>
-            <textarea class="form-control" placeholder="Voer hier de tekst van je post in" wire:model="description"></textarea>
-            @error('description') <span class="text-danger">{{ $message }}</span>
-            @enderror
+            <label for="exampleInputDescription">Post Tekst</label>
+            <div wire:ignore>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.css" />
+
+                <input id="textinput" type="hidden" name="content">
+                <trix-editor input="textinput" wire:model="description"></trix-editor>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js"></script>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Post Opslaan</button>
+
     </form>
 </div>
