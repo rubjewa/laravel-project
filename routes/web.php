@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('over-mij', \App\Http\Livewire\Aboutme::class)->name('aboutme');
 
 Route::get('post/{id}', \App\Http\Livewire\Posts\Show::class)->name('showpost');
 Route::get('posts', \App\Http\Livewire\Posts\ShowAll::class)->name('posts');

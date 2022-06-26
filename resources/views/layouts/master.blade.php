@@ -8,8 +8,11 @@
 <body>
     <x-partials.nav />
 
+
     <br />
+
     <main class="container align-middle">
+        <x-partials.pageheader />
       @isset($slot)
         {{ $slot }}
       @endisset
