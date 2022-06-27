@@ -5,7 +5,6 @@ namespace App\Http\Livewire\Posts;
 use Livewire\Component;
 use App\Models\Post;
 use App\Http\Livewire\Trix;
-use Flash;
 
 class Create extends Component
 {

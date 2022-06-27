@@ -1,29 +1,3 @@
-{{-- <div>
-    <div class="row">
-        <div class="col-lg-12">
-
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h1 class="pb-3">{{ $post->title }}</h1>
-</div>
-<div class="card-body">
-    <p>
-        {!! $post->description !!}
-    </p>
-</div>
-<div class="card-footer text-muted">
-    <i>Aangemaakt: {{ $post->created_at }}</i>
-</div>
-</div>
-</div>
-{{-- Sidebar widget component
-
-            <div class="col-lg-12">
-        <x-partials.widget />
-      </div>
-    </div>
-</div>  --}}
-
 <div class="row">
     <div class="col-lg-12">
         <!-- Post content-->
