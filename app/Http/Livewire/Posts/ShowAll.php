@@ -20,6 +20,12 @@ class ShowAll extends Component
         return redirect()->route('showpost', $id);
     }
 
+    public function mount()
+    {
+        // $commonCategories = Post::select('tags')->distinct()->get();
+      // dd($commonCategories);
+    }
+
     public function render()
     {
         return view('livewire.posts.show-all', [

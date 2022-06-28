@@ -1,11 +1,11 @@
 <div>
     <div class="row">
+      {{-- Side Widget for search --}}
         <div class="col-lg-4">
             <x-partials.widget />
         </div>
-
-        <div class="col-lg-8">
             <!-- Blog entries-->
+        <div class="col-lg-8">
 
             <!-- Featured blog post-->
             @foreach ($posts as $post)
@@ -18,7 +18,7 @@
                         <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
                     </svg>
                 </div>
-                <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..."></a>
+                <a href="#!"><img class="card-img-top" src="https://d1hdtc0tbqeghx.cloudfront.net/wp-content/uploads/2020/07/27141257/laravel-livewire.jpg" alt="..."></a>
                 <div class="card-body">
                     <div class="small text-muted">{{ $post->created_on }}
                     </div>
@@ -27,10 +27,11 @@
                 </div>
                 <div class="card-body">
                     <button class="btn btn-primary" wire:click="showPost({{ $post->id }})">Lees meer →</button>
-                    <span href="#" class="badge badge-secondary float-right mr-1">Example Tag</span>
-                    <span href="#" class="badge badge-secondary float-right mr-1">Laravel</span>
-                    <span href="#" class="badge badge-secondary float-right mr-1">Livewire</span>
-                    <span href=" #" class="badge badge-secondary float-right mr-1">PHP</span>
+                    @if ($post->tags != "")
+                    @foreach(explode(';', $post->tags) as $tag)
+                    <!-- Post categoriën --><a class="badge badge-primary text-decoration-none link-light float-right mr-1" href="#!">{{ ucfirst($tag) }}</a>
+                    @endforeach
+                    @endif
                 </div>
             </div>
             @endif
@@ -43,7 +44,7 @@
                 <div class="col-lg-6">
                     <!-- Blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..."></a>
+                        <a href="#!"><img class="card-img-top" src="https://d1hdtc0tbqeghx.cloudfront.net/wp-content/uploads/2020/07/27141257/laravel-livewire.jpg" alt="..."></a>
                         <div class="card-body">
                             <h2 class="card-title h4">{{ $post->title }}</h2>
                             <p class="card-text">{!! Str::limit($post->description, 115) !!}</p>
