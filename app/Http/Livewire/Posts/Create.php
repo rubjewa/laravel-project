@@ -29,9 +29,9 @@ class Create extends Component
         // Validate request
         $this->validate();
 
-        if ($featured) {
-            $this->featured = 1;
-        }
+        // if ($featured) {
+        //     $this->featured = 1;
+        // }
 
         foreach ($this->stringArray as $term) {
             $term = ucfirst($term);
@@ -49,7 +49,6 @@ class Create extends Component
         $this->reset();
 
         return redirect()->to('/posts/create');
-        // dd($this);
     }
 
 

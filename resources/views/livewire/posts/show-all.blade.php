@@ -23,7 +23,7 @@
                     <div class="small text-muted">{{ $post->created_on }}
                     </div>
                     <h2 class="card-title">{{ $post->title }}</h2>
-                    <p class="card-text">{!! Str::limit($post->description, 400) !!}</p>
+                    <p class="card-text">{!! Str::limit(strip_tags($post->description), 380) !!}</p>
                 </div>
                 <div class="card-body">
                     <button class="btn btn-primary" wire:click="showPost({{ $post->id }})">Lees meer →</button>
@@ -47,7 +47,7 @@
                         <a href="#!"><img class="card-img-top" src="https://d1hdtc0tbqeghx.cloudfront.net/wp-content/uploads/2020/07/27141257/laravel-livewire.jpg" alt="..."></a>
                         <div class="card-body">
                             <h2 class="card-title h4">{{ $post->title }}</h2>
-                            <p class="card-text">{!! Str::limit($post->description, 115) !!}</p>
+                            <p class="card-text">{!! Str::limit(strip_tags($post->description), 115) !!}</p>
 
                             @if ($post->tags != "")
                             @foreach(explode(';', $post->tags) as $tag)

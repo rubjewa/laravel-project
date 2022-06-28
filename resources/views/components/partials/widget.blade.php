@@ -26,16 +26,16 @@
                 </div> --}}
                 <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#!">JavaScript</a></li>
-                        <li><a href="#!">CSS</a></li>
-                        <li><a href="#!">Livewire</a></li>
+                        <li><a href="#!">Laravel</a></li>
+                        <li><a href="#!">PHP</a></li>
+                        <li><a href="#!">Bootstrap</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6">
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#!">JavaScript</a></li>
-                        <li><a href="#!">CSS</a></li>
                         <li><a href="#!">Livewire</a></li>
+                        <li><a href="#!"></a></li>
+                        <li><a href="#!"></a></li>
                     </ul>
                 </div>
             </div>
